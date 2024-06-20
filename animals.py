@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 
 class Animal:
     def __init__(self):
+        self.name = '' # как называют этого животного на сайте
         self.criteria = criteria = { # личные критерии животного
             'hair' : 0, # есть ли шерсть у животного и настолько ее много
             'popular' : 0, # как много опекунов у животного уже есть
@@ -17,7 +18,7 @@ class Animal:
             'area' : 0, # район обитания. 0 - вода, 5 - земля, 9 - воздух
         }
         self.page = '' # адрес страницы этого животного
-        self.name = '' # как называют этого животного на сайте
+        self.image = '' # адрес изображения с этим животным
         self.discription = '' # абзац с описанием животного
 
     def get_name(self):
@@ -40,25 +41,40 @@ class Animal:
     def set_criteria(self, a):
         self.criteria = a
 
+    def get_image(self):
+        return self.image
+    def set_image(self, a):
+        self.image = a
+
 all_tags_for_animals = [] # тэги "а" с данными о животных сохранены в список
-with open(r'D:\Work\Python\mZoo_bot\Жду опекуна.html', 'r', encoding='utf-8') as file: # достаю html код страницы из скачанного файла, так как спарсить сайт не дает
+with open(r'.\Жду опекуна.html', 'r', encoding='utf-8') as file: # достаю html код страницы из скачанного файла, так как спарсить сайт не дает
     soup = BeautifulSoup(file.read(), 'lxml')
 
 all_tags_for_animals = soup.findAll('a', class_='waiting-for-guardian-animals__item animal') # нашел все ссылки на животных
 
 
 all_animals = []    # список из элементов класса Animal со всеми заполненными полями
+print(all_tags_for_animals[1].find('img').get('src'))
 for a in all_tags_for_animals:
     all_animals.append(Animal())
     name = a.find(class_='animal__name').get_text() # запоминаем имя животного
     page = a['href'] # запоминаем ссылку на животное
+    img = a.find('img').get('src')
 
     all_animals[-1].set_name(name)
     all_animals[-1].set_page(page)
+    all_animals[-1].set_image(img)
 
 
-for animal in all_animals:
-    print(animal.get_name(), animal.get_page())
+with open(r'.\animal_criterias.txt', 'w') as file:
+    for animal in all_animals: # заполняю вручную все критерии по каждому животному
+        string = f'''{animal.get_name()}
 
-for animal in all_animals:
-    
+{animal.get_page()}
+{animal.get_image()}
+
+'''
+        file.write(string)
+
+
+
