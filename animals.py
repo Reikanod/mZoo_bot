@@ -4,7 +4,8 @@
 
 # здесь спарсить всех животных и к каждому указать ссылки на их странички, их имена
 # главные их фотки и дополнительные, главная информация о них
-
+#
+from bs4 import BeautifulSoup
 
 class Animal:
     def __init__(self):
@@ -18,3 +19,46 @@ class Animal:
         self.page = '' # адрес страницы этого животного
         self.name = '' # как называют этого животного на сайте
         self.discription = '' # абзац с описанием животного
+
+    def get_name(self):
+        return self.name
+    def set_name(self, a):
+        self.name = a
+
+    def get_page(self):
+        return self.page
+    def set_page(self, a):
+        self.page = a
+
+    def get_discription(self):
+        return self.discription
+    def set_discription(self, a):
+        self.discription = a
+
+    def get_criteria(self):
+        return self.criteria
+    def set_criteria(self, a):
+        self.criteria = a
+
+all_tags_for_animals = [] # тэги "а" с данными о животных сохранены в список
+with open(r'D:\Work\Python\mZoo_bot\Жду опекуна.html', 'r', encoding='utf-8') as file: # достаю html код страницы из скачанного файла, так как спарсить сайт не дает
+    soup = BeautifulSoup(file.read(), 'lxml')
+
+all_tags_for_animals = soup.findAll('a', class_='waiting-for-guardian-animals__item animal') # нашел все ссылки на животных
+
+
+all_animals = []    # список из элементов класса Animal со всеми заполненными полями
+for a in all_tags_for_animals:
+    all_animals.append(Animal())
+    name = a.find(class_='animal__name').get_text() # запоминаем имя животного
+    page = a['href'] # запоминаем ссылку на животное
+
+    all_animals[-1].set_name(name)
+    all_animals[-1].set_page(page)
+
+
+for animal in all_animals:
+    print(animal.get_name(), animal.get_page())
+
+for animal in all_animals:
+    
