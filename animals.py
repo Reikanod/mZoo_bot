@@ -65,16 +65,11 @@ for a in all_tags_for_animals:
     all_animals[-1].set_page(page)
     all_animals[-1].set_image(img)
 
+with open(r'./animal_criterias.txt', 'r') as file:
+    for an in all_animals:
+        while True:
 
-with open(r'.\animal_criterias.txt', 'w') as file:
-    for animal in all_animals: # заполняю вручную все критерии по каждому животному
-        string = f'''{animal.get_name()}
 
-{animal.get_page()}
-{animal.get_image()}
-
-'''
-        file.write(string)
 
 
 

@@ -1,37 +1,39 @@
+# строки, начинающиеся с # не будут считываться
+# строки, начинающиеся с * будут считаться разделителем между животными
 Жираф
 5 4 0 10 5
 https://moscowzoo.ru/animals/kinds/zhiraf
 ./Жду опекуна_files/8c7e704a-6e91-4f4b-be40-640b510976ea.jpeg
 Жирафы – самые высокие современные животные, что в сочетании с яркой пятнистой окраской и необычными пропорциями тела делает их абсолютно узнаваемыми. Жираф занесен в Международную Красную книгу как уязвимый вид – IUCN (VU).
-
+*
 Морской котик
 2 5 7 8 0
 https://moscowzoo.ru/animals/kinds/severnyy_morskoy_kotik
 ./Жду опекуна_files/108d525a-6906-4b58-8367-e0ba099cb3ab.jpeg
 Уникальные особенности строения позволяют северному морскому котику стремительно двигаться в воде и быстро перемещаться по суше; хорошо видеть, как в воздушной среде, так и под водой и месяцами не выходить на берег.
 Вид включён в Международную Красную Книгу в статусе уязвимого – IUCN (VU). Численность животных продолжает сокращаться
-
+*
 Пингвин гумбольдта
 2 10 5 5 0
 https://moscowzoo.ru/animals/kinds/pingvin_gumboldta
 ./Жду опекуна_files/7843aa98-a6b5-43c2-890c-bd147a1f0d78.jpeg
 Небольшой пингвин, которого можно узнать по розовой полосе вокруг клюва. Своё название птица получила в честь известного немецкого географа и путешественника начала 19 века Александра Гумбольдта.
 Вид находится на грани исчезновения, внесен в Международную Красную книгу – IUCN (VU), и Конвенцию о международной торговле видами дикой фауны и флоры – CITES I. Мировая популяция насчитывает 12 000 пар, из которых 8 000 гнездится в Чили, а 4 000 – в Перу. Вид достаточно уязвимый: так, мощная фаза Эль Ниньо в 1982-1983 гг. препятствовала поднятию холодных вод из глубин океана, богатых кислородом, что привело к гибели рыбы и потере 65% популяции пингвина
-
+*
 Снежный барс
 5 4 9 7 5
 https://moscowzoo.ru/animals/kinds/irbis_snezhnyy_bars
 ./Жду опекуна_files/1513e911-c90a-4719-ba56-c7a5f3d4e0b4.jpeg
 Снежный барс – самая «высокогорная» кошка – живёт и охотится в одиночку в самых высоких горах мира.
 Ирбис – очень редкая кошка, вид находится в уязвимом состоянии – IUCN (VU)
-
+*
 Снежный барс Дайна 
 5 1 9 7 5
 https://moscowzoo.ru/animals/kinds/irbis_snezhnyy_bars
 ./Жду опекуна_files/1513e911-c90a-4719-ba56-c7a5f3d4e0b4.jpeg
 Снежный барс – самая «высокогорная» кошка – живёт и охотится в одиночку в самых высоких горах мира.
 Ирбис – очень редкая кошка, вид находится в уязвимом состоянии – IUCN (VU)
-
+*
 Медоед
 3 5 5 5 5
 https://moscowzoo.ru/animals/kinds/medoed
@@ -39,39 +41,39 @@ https://moscowzoo.ru/animals/kinds/medoed
 Медоед известен своим бесстрашием при совсем небольших размерах.
 Своё название зверёк получил за то, что часто разоряет пчелиные ульи, лакомясь мёдом и личинками пчёл.
 В настоящее время выделяется 12 подвидов медоедов. Они отличаются, в основном, размерами, окраской спины и длиной шерсти
-
+*
 Капибара
 4 13 0 5 3
 https://moscowzoo.ru/animals/kinds/kapibara
 ./Жду опекуна_files/da529dd9-55de-44c3-8ad2-340ab736eec6.jpg
 Обычный вид, не относится к охраняемым – IUCN (LC).
-
+*
 Тигровый питон
 0 2 7 7 5
 https://moscowzoo.ru/animals/kinds/temnyy_tigrovyy_piton
 ./Жду опекуна_files/9ffa798f-2d10-42d9-b7f3-06262004e919.jpeg
 Крупная неядовитая змея из рода настоящих питонов. Один из самых известных видов рода
-
+*
 Морж
 0 5 7 8 0
 https://moscowzoo.ru/animals/kinds/morzh
 ./Жду опекуна_files/13d0c550-3d23-429b-bb53-b73e508bc90c.jpeg
 Вид морских млекопитающих, единственный современный вид в семействе моржовых парвотряда ластоногих
-
+*
 Пума
 5 5 9 7 5
 https://moscowzoo.ru/animals/kinds/puma
 ./Жду опекуна_files/f4d9a745-666e-48b2-bd8e-d6029e748283.jpeg
 Кошка, живущая и в Северном, и в Южном полушариях. Обитает на землях многих индейских племён и поэтому имеет массу местных названий.
 Старая классификация, основанная на морфологических характеристиках и сохранявшаяся до 1999 года, выделяла около 24—30 подвидов пумы
-
+*
 Двугорбый верблюд
 5 2 0 8 5
 https://moscowzoo.ru/animals/kinds/dvugorbyy_verblyud
 ./Жду опекуна_files/bcb5b744-5425-4f4c-b48a-138fd403b52a.jpeg
 Домашний двугорбый верблюд – обычное животное в государствах Средней Азии, Монголии и Китае. В России наибольшее количество верблюдов содержится в Бурятии и Калмыкии. Мировое поголовье превышает 2 миллиона голов.
 Дикий двугорбый верблюд – очень редкое животное, занесено в Красную книгу МСОП, в категории CR – вид, находящийся в критической опасности угрозы исчезновения. Популяция этих животных насчитывает лишь несколько сотен особей. По некоторым данным, дикий верблюд по степени угрозы находится на восьмом месте среди млекопитающих, стоящих на грани исчезновения.
-
+*
 Нильский крылан
 1 5 5 3 9
 https://moscowzoo.ru/animals/kinds/nilskiy_krylan
@@ -79,26 +81,26 @@ https://moscowzoo.ru/animals/kinds/nilskiy_krylan
 Единственный из многих видов крыланов, способный к эхолокации.
 В отряде рукокрылых два подотряда – летучие мыши и крыланы. Летучие мыши с помощью эхолокации прекрасно ориентируются в полной темноте и охотятся на насекомых. Крыланы питаются фруктами, и способностью к эхолокации обладает только тот вид, представители которого ночуют в пещерах – это нильские крыланы.
 Нильские крыланы относятся к видам, находящимся под наименьшей угрозой исчезновения – IUCN (LC). Вид в природе обычен. 
-
+*
 Жираф Липа
 3 4 0 10 5
 https://moscowzoo.ru/animals/kinds/zhiraf
 ./Жду опекуна_files/8c7e704a-6e91-4f4b-be40-640b510976ea.jpeg
 Жирафы – самые высокие современные животные, что в сочетании с яркой пятнистой окраской и необычными пропорциями тела делает их абсолютно узнаваемыми.
-
+*
 Мохноногий сыч
 2 1 5 3 9
 https://moscowzoo.ru/animals/kinds/mohnonogiy_sych
 ./Жду опекуна_files/25bf3d5c-d1ab-4343-9a3e-7dcb59ce6886.png
 Очаровательная маленькая сова с очень большой головой и густо оперёнными ногами.
 В Северной Америке обычно употребляется название boreal owl, а в Европе Tengmalm’s owl в честь шведского натуралиста Петере Густова Тенгмальма.
-
+*
 Слон
 0 6 0 10 5
 https://moscowzoo.ru/animals/kinds/aziatskiy_slon
 ./Жду опекуна_files/5c716198-b8c0-4f4e-b831-728f39a79009.jpeg
 В настоящее время дикие азиатские слоны находятся под угрозой исчезновения – IUCN(EN).
-
+*
 Азиатский лев
 5 6 9 7 5
 https://moscowzoo.ru/animals/kinds/indiyskiy_lev
@@ -107,376 +109,55 @@ https://moscowzoo.ru/animals/kinds/indiyskiy_lev
 В настоящее время не существует единого мнения о количестве подвидов льва: африканских хищников одни исследователи разделяют на несколько подвидов, другие считают одним подвидом. Однако все выделяют в отдельный подвид львов, обитающих на Азиатском континенте.
 Данные генетического анализа показывают, что общий предок азиатских и африканских львов жил около 100 тыс. лет назад.
 В зоопарке в настоящее время содержатся львы значительно более редкого, азиатского подвида.
-
+*
 Малая панда
 5 3 7 3 5
 https://moscowzoo.ru/animals/kinds/malaya_panda
 ./Жду опекуна_files/b8e2a54f-fbc9-4039-9bc8-0f9a9c0e9585.jpeg
 Симпатичный зверь размером с крупного домашнего кота, малая панда полосатым хвостом похожа на енота. За яркую шерсть её называют «огненной лисой», а за повадки – «кошачьим медведем». Последние генетические исследования позволили выделить малую панду в отдельное семейство – пандовые.
-
+*
 Белогрудый ёж
 1 3 5 3 5
 https://moscowzoo.ru/animals/kinds/belogrudyy_ezh
 ./Жду опекуна_files/81354eae-792a-474f-a1a6-accd8540e071.jpeg
 Млекопитающее рода евразийских ежей семейства ежовых. Является ближайшим родственником южного ежа, до конца XX века рассматривавшегося в качестве подвида восточноевропейского
-
+*
 Дикдик
 4 7 0 5 5
 https://moscowzoo.ru/animals/kinds/obyknovennyy_dikdik
 ./Жду опекуна_files/174d2fd1-d434-49b3-8f0c-c1e3fee1c977.jpeg
 Живущая в густом кустарнике крошечная антилопа с огромными глазами и хоботком.
 Дикдик Кирка - один из четырёх видов антилоп дикдик. Считается, что вид имеет 6 подвидов и, возможно, седьмой подвид, обитающий на юго-западе Африки.
-
+*
 Веслоног денниси
 0 1 5 0 0
 https://moscowzoo.ru/animals/kinds/veslonog_dennisi
 ./Жду опекуна_files/b212917f-4299-44f2-8b01-ffda365192aa.jpeg
 семейство бесхвостых земноводных. Одной из особенностей веслоногов является способность некоторых представителей семейства к планирующим прыжкам
-
+*
 Сурикат
 5 8 5 3 5
 https://moscowzoo.ru/animals/kinds/surikat
 ./Жду опекуна_files/b184b0be-9537-4b67-be4a-f5b82278de8a.jpeg
 Эти животные немного похожи на обезьян, немного на енотов, и чуть-чуть на грызунов. В действительности, они хищники и ближайшие родственники мангустов. Живя в суровых условиях Калахари, сурикаты питаются животными, яд которых убивает человека наповал.
 В некоторых местах ареала вид обычен, хотя численность в связи с нарушением среды обитания сокращается. Дальнейшее вмешательство человека в природу может стать причиной ухудшения ситуации. Статус вида по международной классификации – IUCN (LC).
-
+*
 Альпака
 7 4 0 7 5
 https://moscowzoo.ru/animals/kinds/alpaka
 ./Жду опекуна_files/c4c79b91-7b5a-4986-a844-d95796b46cc4.jpeg
 Одомашненный потомок дикого безгорбого верблюда Южной Америки.
 Домашнее животное, в диком виде не встречается.
-
+*
 Леопард дальневосточный
 5 5 9 7 5
 https://moscowzoo.ru/animals/kinds/dalnevostochnyy_leopard
 ./Жду опекуна_files/36298699-940a-4212-8736-0b02c8448abd.jpeg
 Самая редкая в мире крупная кошка, численность которой в природе немногим более 100 особей.
-
+*
 Папуанский пингвин
 2 4 5 5 0
 https://moscowzoo.ru/animals/kinds/papuanskiy_pingvin
 ./Жду опекуна_files/604fdbb2-14cd-4727-8f73-3e602dc49659.jpeg
 После императорского и королевского, папуанский пингвин – самый крупный представитель семейства.
 Один из трех видов, относящихся к роду антарктических пингвинов. Иногда специалисты орнитологи выделяют 2 подвида папуанского пингвина P.p. ellsworthi и P.p. papua. Особи первого подвида мельче, у них более длинные перья, короче крылья и клюв и меньше лапы.
-
-Рысь
-
-https://moscowzoo.ru/animals/kinds/vostochno_sibirskaya_rys
-./Жду опекуна_files/b92e079b-7c75-45ad-825b-ab5db25eae8a.jpeg
-
-Анаконда парагвайская
-
-https://moscowzoo.ru/animals/kinds/paragvayskaya_anakonda
-./Жду опекуна_files/45c13558-476a-4744-a5cf-b01db33e4b25.jpeg
-
-Даман Брюса
-
-https://moscowzoo.ru/animals/kinds/daman_bryusa
-./Жду опекуна_files/acee0c88-9109-475a-9998-1d64cbe956d8.jpeg
-
-Амурский тигр
-
-https://moscowzoo.ru/animals/kinds/amurskiy_tigr
-./Жду опекуна_files/4fbb2421-64be-45f0-956d-514f7c2c18db.jpeg
-
-Ушастая сова
-
-https://moscowzoo.ru/animals/kinds/ushastaya_sova
-./Жду опекуна_files/36102208-b069-403e-8d84-31b2631010c9.jpeg
-
-Лемур кошачий
-
-https://moscowzoo.ru/animals/kinds/lemur_koshachiy
-./Жду опекуна_files/77c0892e-736c-4c1c-9525-a11ce8eb61be.jpeg
-
-Лучистая черепаха
-
-https://moscowzoo.ru/animals/kinds/luchistaya_cherepaha
-./Жду опекуна_files/3e657b0d-1e2f-4d8f-8422-b520d90e80ad.jpeg
-
-Лисица
-
-https://moscowzoo.ru/animals/kinds/obyknovennaya_lisica
-./Жду опекуна_files/74cb118c-eb63-4abb-bb3c-bc315c353f89.jpg
-
-Зелёная жаба
-
-https://moscowzoo.ru/animals/kinds/zelenaya_zhaba
-./Жду опекуна_files/8b3b90f8-f7ea-4edc-844c-1226165844f3.jpeg
-
-Гималайский медведь
-
-https://moscowzoo.ru/animals/kinds/ussuriyskiy_belogrudyy_gimalayskiy_medved
-./Жду опекуна_files/1424d2c1-8e6d-4423-8c5f-0ff22bce8b93.jpeg
-
-Кафрский рогатый ворон
-
-https://moscowzoo.ru/animals/kinds/kafrskiy_rogatyy_voron
-./Жду опекуна_files/fbcb6b55-d036-4d17-bc75-5ac0dcdeb808.jpeg
-
-Сиамский крокодил
-
-https://moscowzoo.ru/animals/kinds/siamskiy_krokodil
-./Жду опекуна_files/87e4ec11-8d44-4e54-8e23-f572ffdc32ca.png
-
-Харза уссурийская
-
-https://moscowzoo.ru/animals/kinds/ussuriyskaya_harza
-./Жду опекуна_files/17e75cd3-eade-484c-95ff-1590c17c4bcd.jpeg
-
-Мышь-малютка
-
-https://moscowzoo.ru/animals/kinds/mysh_malyutka
-./Жду опекуна_files/c4a507b3-915d-43cc-8299-67735893e3d6.jpeg
-
-Зебра
-
-https://moscowzoo.ru/animals/kinds/zebra_grevi
-./Жду опекуна_files/31288cde-40e1-4fa5-b516-1748485268f6.jpeg
-
-Трубкозуб
-
-https://moscowzoo.ru/animals/kinds/kapskiy_trubkozub
-./Жду опекуна_files/1303f326-4b8a-4d7a-a25c-440c761384bb.jpeg
-
-Песец
-
-https://moscowzoo.ru/animals/kinds/pesec
-./Жду опекуна_files/90df0006-b25a-4a4d-9356-dde5ecb4ca8b.jpg
-
-Шакал азиатский
-
-https://moscowzoo.ru/animals/kinds/yuzhnoevropeyskiy_shakal
-./Жду опекуна_files/f9c239a0-936a-4eda-a21e-dbb8ce497e06.jpeg
-
-Красный волк
-
-https://moscowzoo.ru/animals/kinds/krasnyy_volk
-./Жду опекуна_files/64d12465-a798-4ab8-91a2-77e2517187a4.jpeg
-
-Выдра
-
-https://moscowzoo.ru/animals/kinds/obyknovennaya_vydra
-./Жду опекуна_files/8105646f-9e1f-48e1-bde3-46b1602fee30.jpeg
-
-Фазан аргус
-
-https://moscowzoo.ru/animals/kinds/fazan_argus
-./Жду опекуна_files/f98893a9-1992-425e-92ad-da73d83bfa13.jpeg
-
-Двухцветный кожан
-
-https://moscowzoo.ru/animals/kinds/dvuhcvetnyy_kozhan
-./Жду опекуна_files/8c6f0495-3ccd-4514-a8ea-ad3086cc93ee.jpeg
-
-Овцебык
-
-https://moscowzoo.ru/animals/kinds/kanadskiy_ovcebyk
-./Жду опекуна_files/2591e8cb-6a8c-400d-9616-bacb2eb43d27.jpeg
-
-Гривистый волк
-
-https://moscowzoo.ru/animals/kinds/grivistyy_volk
-./Жду опекуна_files/8b0fb863-22fe-462f-aff3-2ad597dae821.jpeg
-
-Камышовый кот
-
-https://moscowzoo.ru/animals/kinds/kamyshovyy_kot
-./Жду опекуна_files/6d89be9c-a514-46a2-8b86-140966a39ebd.jpeg
-
-Красноглазая квакша
-
-https://moscowzoo.ru/animals/kinds/krasnoglazaya_kvaksha
-./Жду опекуна_files/5914f782-b993-4228-a0b6-f839d16abe2d.jpeg
-
-Питон сетчатый
-
-https://moscowzoo.ru/animals/kinds/setchatyy_piton
-./Жду опекуна_files/43de4b2c-a1cb-4023-858d-5110498676cf.jpeg
-
-Бегемот
-
-https://moscowzoo.ru/animals/kinds/karlikovyy_begemot
-./Жду опекуна_files/3b3b63f9-f1a7-498f-a1f7-7d229b118826.jpeg
-
-Кустарниковая собака
-
-https://moscowzoo.ru/animals/kinds/kustarnikovaya_sobaka
-./Жду опекуна_files/892a28e2-b881-49e3-98dd-a05c69b7dae6.jpeg
-
-Гималайский медведь Бабуля
-
-https://moscowzoo.ru/animals/kinds/ussuriyskiy_belogrudyy_gimalayskiy_medved
-./Жду опекуна_files/1424d2c1-8e6d-4423-8c5f-0ff22bce8b93.jpeg
-
-Леопард 
-
-https://moscowzoo.ru/animals/kinds/dalnevostochnyy_leopard
-./Жду опекуна_files/36298699-940a-4212-8736-0b02c8448abd.jpeg
-
-Манул
-
-https://moscowzoo.ru/animals/kinds/manul
-./Жду опекуна_files/7773b2d5-eb6c-499c-9208-554ef6ec0678.jpeg
-
-Росомаха
-
-https://moscowzoo.ru/animals/kinds/rosomaha
-./Жду опекуна_files/320d974d-8c56-4280-b519-4d15d053c33f.jpeg
-
-Енот
-
-https://moscowzoo.ru/animals/kinds/enot_poloskun
-./Жду опекуна_files/996a60f3-ac30-45eb-8fdb-7e88deae3388.jpg
-
-Тигр амурский Тихон
-
-https://moscowzoo.ru/animals/kinds/amurskiy_tigr
-./Жду опекуна_files/4fbb2421-64be-45f0-956d-514f7c2c18db.jpeg
-
-Медведь Диксон
-
-https://moscowzoo.ru/animals/kinds/belyy_medved
-./Жду опекуна_files/10581435-a5ba-4118-96d2-9c44c6063416.jpeg
-
-Бык Гаврюша
-
-https://moscowzoo.ru/animals/kinds/byk_haylend
-./Жду опекуна_files/826e6fe0-1488-4b47-b953-0abf0fa2b5bd.jpeg
-
-Бобр
-
-https://moscowzoo.ru/animals/kinds/obyknovennyy_bobr
-./Жду опекуна_files/9781cc76-9ae8-4678-a329-c591d55762dd.jpeg
-
-Японский журавль
-
-https://moscowzoo.ru/animals/kinds/yaponskiy_zhuravl
-./Жду опекуна_files/412d11f9-cb9b-4d7c-9b4a-feb4d507bef2.jpeg
-
-Краснорукий тамарин
-
-https://moscowzoo.ru/animals/kinds/krasnorukiy_tamarin
-./Жду опекуна_files/12bb443f-df82-4756-ba81-fc953f22b6ec.jpeg
-
-Верблюд
-
-https://moscowzoo.ru/animals/kinds/dvugorbyy_verblyud
-./Жду опекуна_files/bcb5b744-5425-4f4c-b48a-138fd403b52a.jpeg
-
-Морской котик Роджер
-
-https://moscowzoo.ru/animals/kinds/severnyy_morskoy_kotik
-./Жду опекуна_files/108d525a-6906-4b58-8367-e0ba099cb3ab.jpeg
-
-Гималайский медведь Фаня
-
-https://moscowzoo.ru/animals/kinds/ussuriyskiy_belogrudyy_gimalayskiy_medved
-./Жду опекуна_files/1424d2c1-8e6d-4423-8c5f-0ff22bce8b93.jpeg
-
-Серый тюлень
-
-https://moscowzoo.ru/animals/kinds/seryy_tyulen
-./Жду опекуна_files/f2395627-4a64-4341-8ffb-deab6d12bae9.jpeg
-
-Фазан
-
-https://moscowzoo.ru/animals/kinds/obyknovennyy_fazan
-./Жду опекуна_files/7d46bf28-e2df-4773-bc08-c216730e3800.jpeg
-
-Викунья
-
-https://moscowzoo.ru/animals/kinds/vikunya
-./Жду опекуна_files/1a14c7f6-9bc3-4dd4-8f19-4c7199f2396b.jpg
-
-Питон тигровый
-
-https://moscowzoo.ru/animals/kinds/temnyy_tigrovyy_piton
-./Жду опекуна_files/9ffa798f-2d10-42d9-b7f3-06262004e919.jpeg
-
-Енот Партийц
-
-https://moscowzoo.ru/animals/kinds/enot_poloskun
-./Жду опекуна_files/996a60f3-ac30-45eb-8fdb-7e88deae3388.jpg
-
-Тупорылый крокодил
-
-https://moscowzoo.ru/animals/kinds/tuporylyy_krokodil
-./Жду опекуна_files/d02b9593-9ec3-45c2-98db-d55665f75058.jpeg
-
-Белка капская земляная
-
-https://moscowzoo.ru/animals/kinds/kapskaya_zemlyanaya_belka
-./Жду опекуна_files/4f4be30d-4446-4b4d-8269-8a3336098e77.jpeg
-
-Соболь
-
-https://moscowzoo.ru/animals/kinds/sobol
-./Жду опекуна_files/95934459-7912-4e47-b70a-5c82de281791.jpeg
-
-Лемур
-
-https://moscowzoo.ru/animals/kinds/lemur_koshachiy
-./Жду опекуна_files/77c0892e-736c-4c1c-9525-a11ce8eb61be.jpeg
-
-Бобр Беляш
-
-https://moscowzoo.ru/animals/kinds/obyknovennyy_bobr
-./Жду опекуна_files/9781cc76-9ae8-4678-a329-c591d55762dd.jpeg
-
-Барс
-
-https://moscowzoo.ru/animals/kinds/irbis_snezhnyy_bars
-./Жду опекуна_files/1513e911-c90a-4719-ba56-c7a5f3d4e0b4.jpeg
-
-Какаду желтохохлый малый
-
-https://moscowzoo.ru/animals/kinds/malyy_zheltohohlyy_kakadu
-./Жду опекуна_files/4c3a103b-09ac-4217-b559-dda3ae2ccd4c.jpeg
-
-Пингвин очковый
-
-https://moscowzoo.ru/animals/kinds/pingvin_afrikanskiy_ochkovyy
-./Жду опекуна_files/cde5a0dc-47ad-4043-9c00-bb1976d74cc4.jpeg
-
-Жираф Самсон
-
-https://moscowzoo.ru/animals/kinds/zhiraf
-./Жду опекуна_files/8c7e704a-6e91-4f4b-be40-640b510976ea.jpeg
-
-Квакша дальневосточная
-
-https://moscowzoo.ru/animals/kinds/dalnevostochnaya_kvaksha
-./Жду опекуна_files/eb6ca8a5-7aa5-46a8-b3f0-79c6577d2365.jpeg
-
-Попугай благородный зелено-красный
-
-https://moscowzoo.ru/animals/kinds/blagorodnyy_zeleno_krasnyy_popugay
-./Жду опекуна_files/f682b458-28bd-48fb-a75c-276f502e9604.jpeg
-
-Белый медведь
-
-https://moscowzoo.ru/animals/kinds/belyy_medved
-./Жду опекуна_files/10581435-a5ba-4118-96d2-9c44c6063416.jpeg
-
-Леопард Николай
-
-https://moscowzoo.ru/animals/kinds/dalnevostochnyy_leopard
-./Жду опекуна_files/36298699-940a-4212-8736-0b02c8448abd.jpeg
-
-Кот камышовый Заури
-
-https://moscowzoo.ru/animals/kinds/kamyshovyy_kot
-./Жду опекуна_files/6d89be9c-a514-46a2-8b86-140966a39ebd.jpeg
-
-Чёрная антилопа
-
-https://moscowzoo.ru/animals/kinds/yuzhnoafrikanskaya_chernaya_antilopa
-./Жду опекуна_files/f984b709-76f0-436c-803c-a2608ecac063.jpeg
-
-Кустарникоая собака
-
-https://moscowzoo.ru/animals/kinds/kustarnikovaya_sobaka
-./Жду опекуна_files/892a28e2-b881-49e3-98dd-a05c69b7dae6.jpeg
-
