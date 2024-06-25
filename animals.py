@@ -65,9 +65,7 @@ for a in all_tags_for_animals:
     all_animals[-1].set_page(page)
     all_animals[-1].set_image(img)
 
-with open(r'./animal_criterias.txt', 'r') as file:
-    for an in all_animals:
-        while True:
+
 
 
 
