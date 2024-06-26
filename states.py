@@ -20,26 +20,21 @@
 # пользователь написал А - перевести машину в состояние А
 # написал Б - перевести в Б
 
-class States():
+
+class State():
     def __init__(self):
-        self.state = ''
+        self.cur_state = None
 
-    def get_state(self):
-        return self.state
+class StateStart(State):
+    def go_to_quiz(self):
+        self.cur_state = StateQuiz()
+    def go_to_end(self):
+        self.cur_state = StateEnd()
 
-    def set_state(self, state):
-        self.state = state
+class StateQuiz(State):
+    def go_to_end(self):
+        self.cur_state = StateEnd()
+class StateEnd(State):
+    def go_to_start(self):
+        self.cur_state = StateStart()
 
-class stateA(States):
-    def __init__(self):
-        self.set_state('A')
-
-    def go_to_b(self):
-        self.set_state('B')
-
-class stateB(States):
-    def __init__(self):
-        self.set_state('B')
-
-    def go_to_b(self):
-        self.set_state('A')
