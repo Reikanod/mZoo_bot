@@ -5,6 +5,7 @@
 # здесь спарсить всех животных и к каждому указать ссылки на их странички, их имена
 # главные их фотки и дополнительные, главная информация о них
 #
+import sqlite3
 from bs4 import BeautifulSoup
 
 class Animal:
@@ -66,8 +67,24 @@ for a in all_tags_for_animals:
     all_animals[-1].set_image(img)
 
 
+connection_to_sql = sqlite3.connect('animals.db')
+cursor = connection_to_sql.cursor()
 
-
-
+cursor.execute('''
+CREATE TABLE IF NOT EXIST Animals (
+id INTEGER PRIMARY KEY,
+name TEXT,
+page TEXT,
+discription TEXT,
+image TEXT,
+hair INTEGER,
+popular INTEGER,
+food INTEGER,
+size INTEGER,
+area INTEGER
+) 
+''')
+connection_to_sql.commit()
+connection_to_sql.close()
 
 

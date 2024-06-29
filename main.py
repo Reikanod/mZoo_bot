@@ -5,7 +5,10 @@ from states import State, StateStart
 state = State()
 state.cur_state = StateStart()
 
-state.greet()
+
+@bot.message_handler(commands=['start'])
+def greet(message):
+    state.cur_state.greet(message)
 
 
 
