@@ -53,25 +53,10 @@ with open(r'.\Жду опекуна.html', 'r', encoding='utf-8') as file: # д�
 
 all_tags_for_animals = soup.findAll('a', class_='waiting-for-guardian-animals__item animal') # нашел все ссылки на животных
 
-
-all_animals = []    # список из элементов класса Animal со всеми заполненными полями
-print(all_tags_for_animals[1].find('img').get('src'))
-for a in all_tags_for_animals:
-    all_animals.append(Animal())
-    name = a.find(class_='animal__name').get_text() # запоминаем имя животного
-    page = a['href'] # запоминаем ссылку на животное
-    img = a.find('img').get('src')
-
-    all_animals[-1].set_name(name)
-    all_animals[-1].set_page(page)
-    all_animals[-1].set_image(img)
-
-
-connection_to_sql = sqlite3.connect('animals.db')
+connection_to_sql = sqlite3.connect('animals.db') # присоединяюсь к базе
 cursor = connection_to_sql.cursor()
-
 cursor.execute('''
-CREATE TABLE IF NOT EXIST Animals (
+CREATE TABLE IF NOT EXISTS Animals (
 id INTEGER PRIMARY KEY,
 name TEXT,
 page TEXT,
@@ -82,8 +67,35 @@ popular INTEGER,
 food INTEGER,
 size INTEGER,
 area INTEGER
-) 
+)
 ''')
+
+
+all_animals = []    # список из элементов класса Animal со всеми заполненными полями
+print(all_tags_for_animals[1].find('img').get('src'))
+for a in all_tags_for_animals:
+    all_animals.append(Animal())
+    name = a.find(class_='animal__name').get_text() # запоминаем имя животного
+    page = a['href'] # запоминаем ссылку на животное
+    img = a.find('img').get('src') # запоминаем ссылку на изображение животного
+
+    all_animals[-1].set_name(name)
+    all_animals[-1].set_page(page)
+    all_animals[-1].set_image(img)
+    all_animals[-1].set_discription('Описание животного')
+
+i = 0
+for an in all_animals:
+    cursor.execute(f'''
+INSERT INTO Animal
+VALUES ({i}, {an.get_name()}, {an.get_page()}, {an.get_discription()}, )
+''')
+    i += 1
+
+
+
+
+
 connection_to_sql.commit()
 connection_to_sql.close()
 
