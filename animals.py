@@ -1,13 +1,9 @@
-# сюда сделать класс животных. Они должны иметь баллы по основным критериям
-# человек должен по итогу иметь такие же свои баллы по тем же критериям и к кому он ближе
-# то животное и порекомендовать
-
-# здесь спарсить всех животных и к каждому указать ссылки на их странички, их имена
-# главные их фотки и дополнительные, главная информация о них
-#
 import sqlite3
 from bs4 import BeautifulSoup
+import json
+import requests
 
+# классы
 class Animal:
     def __init__(self):
         self.name = '' # как называют этого животного на сайте
@@ -20,7 +16,7 @@ class Animal:
         }
         self.page = '' # адрес страницы этого животного
         self.image = '' # адрес изображения с этим животным
-        self.discription = '' # абзац с описанием животного
+        self.description = '' # абзац с описанием животного
 
     def get_name(self):
         return self.name
@@ -32,10 +28,10 @@ class Animal:
     def set_page(self, a):
         self.page = a
 
-    def get_discription(self):
-        return self.discription
-    def set_discription(self, a):
-        self.discription = a
+    def get_description(self):
+        return self.description
+    def set_description(self, a):
+        self.description = a
 
     def get_criteria(self):
         return self.criteria
@@ -46,6 +42,57 @@ class Animal:
         return self.image
     def set_image(self, a):
         self.image = a
+# конец классов
+
+# функции
+def receive_ya_api_keys(): # получить необходимые ключи из файла
+    with open(r'../ya_api_keys.txt', 'r', encoding='utf-8') as file:
+        file_lines = file.readlines()
+        cat_id = file_lines[1].strip()
+        ya_api_id = file_lines[5].strip()
+    keys = {
+        'catalog_id': cat_id, # идентификатор каталога
+        'ya_api_key': ya_api_id # ключ апишки
+    }
+    return keys
+
+def ask_descr_from_yandex(keys, animal_name): # получить описание животного от яндекса. keys - словарь с ключами для апи, animal_name - имя животного с сайта зоопарка
+    prompt = {
+        "modelUri": f"gpt://{keys['catalog_id']}/yandexgpt-lite",
+        "completionOptions": {
+            "stream": False,
+            "temperature": 0.6,
+            "maxTokens": "2000"
+        },
+        "messages": [
+            {
+                "role": "system",
+                "text": "В несколькоих предложениях опиши основную информацию об этом животном, степень редкости распространения, занесен ли в красную книгу"
+            },
+            {
+                "role": "user",
+                "text": animal_name
+            }
+        ]
+    }
+
+    url = "https://llm.api.cloud.yandex.net/foundationModels/v1/completion"
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Api-Key {keys['ya_api_key']}"
+    }
+
+    response = requests.post(url, headers=headers, json=prompt)
+    json_resp = response.text
+    result = json.loads(json_resp)
+    if result['result']: # если яндекс вернет результат - используем его. Если что то другое - результат равен пустой строке
+        result = result['result']['alternatives'][0]['message']['text']
+    else:
+        result = ''
+    return result
+# конец функций
+
+# main
 
 all_tags_for_animals = [] # тэги "а" с данными о животных сохранены в список
 with open(r'.\Жду опекуна.html', 'r', encoding='utf-8') as file: # достаю html код страницы из скачанного файла, так как спарсить сайт не дает
@@ -67,36 +114,41 @@ popular INTEGER,
 food INTEGER,
 size INTEGER,
 area INTEGER
-)
+);
 ''')
 
 
 all_animals = []    # список из элементов класса Animal со всеми заполненными полями
-print(all_tags_for_animals[1].find('img').get('src'))
+keys = receive_ya_api_keys() # получили ключи из файла
 for a in all_tags_for_animals:
     all_animals.append(Animal())
     name = a.find(class_='animal__name').get_text() # запоминаем имя животного
     page = a['href'] # запоминаем ссылку на животное
     img = a.find('img').get('src') # запоминаем ссылку на изображение животного
+    description = ask_descr_from_yandex(keys, name) # запоминаем описание животного
+    print(name, '////', page, '////', img)
+    print(description.replace('\n', ' '))
 
-    all_animals[-1].set_name(name)
+    all_animals[-1].set_name(name) # запоминаем эту информацию в список из объектов класса Animal
     all_animals[-1].set_page(page)
     all_animals[-1].set_image(img)
-    all_animals[-1].set_discription('Описание животного')
+    all_animals[-1].set_description(description.replace('\n', ' '))
 
-i = 0
-for an in all_animals:
-    cursor.execute(f'''
-INSERT INTO Animal
-VALUES ({i}, {an.get_name()}, {an.get_page()}, {an.get_discription()}, )
-''')
+i = 1
+for an in all_animals: # проходимся по всем животным и в БД записываем о них всю информацию
+    sql_query = f'''
+INSERT INTO Animals (id, name, page, discription, image, hair, popular, food, size, area)
+VALUES ({i}, '{an.get_name()}', '{an.get_page()}', '{an.get_description()}', '{an.get_image()}', 
+{an.get_criteria()['hair']}, {an.get_criteria()['popular']}, {an.get_criteria()['food']}, 
+{an.get_criteria()['size']}, {an.get_criteria()['area']});
+'''
+    print(sql_query)
+    cursor.execute(sql_query)
     i += 1
 
-
-
-
-
 connection_to_sql.commit()
-connection_to_sql.close()
+connection_to_sql.close() # коммичу и закрываю БД. В ней все данные о животных
+
+
 
 
