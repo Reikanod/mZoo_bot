@@ -1,7 +1,10 @@
+# Задача скрипта - заполнить базу данных данными о всех животных
+# Животные берутся с сайта зоопарка, записываются в локальную БД, в них заносятся все необходимые критерии для дальнейшей работы
 import sqlite3
 from bs4 import BeautifulSoup
 import json
 import requests
+import random
 
 # классы
 class Animal:
@@ -90,64 +93,97 @@ def ask_descr_from_yandex(keys, animal_name): # получить описани�
     else:
         result = ''
     return result
+
+def first_info_into_bd(): # первый проход. В бд заносятся все животные и все возможные данные о них
+    all_tags_for_animals = [] # тэги "а" с данными о животных сохранены в список
+    with open(r'.\Жду опекуна.html', 'r', encoding='utf-8') as file: # достаю html код страницы из скачанного файла, так как спарсить сайт не дает
+        soup = BeautifulSoup(file.read(), 'lxml')
+
+    all_tags_for_animals = soup.findAll('a', class_='waiting-for-guardian-animals__item animal') # нашел все ссылки на животных
+
+    connection_to_sql = sqlite3.connect('animals.db') # присоединяюсь к базе
+    cursor = connection_to_sql.cursor()
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Animals (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    page TEXT,
+    discription TEXT,
+    image TEXT,
+    hair INTEGER,
+    popular INTEGER,
+    food INTEGER,
+    size INTEGER,
+    area INTEGER
+    );
+    ''')
+
+
+    all_animals = []    # список из элементов класса Animal со всеми заполненными полями
+    keys = receive_ya_api_keys() # получили ключи из файла
+    for a in all_tags_for_animals:
+        all_animals.append(Animal())
+        name = a.find(class_='animal__name').get_text() # запоминаем имя животного
+        page = a['href'] # запоминаем ссылку на животное
+        img = a.find('img').get('src') # запоминаем ссылку на изображение животного
+        description = ask_descr_from_yandex(keys, name) # запоминаем описание животного
+        print(name, '////', page, '////', img)
+        print(description.replace('\n', ' '))
+
+        all_animals[-1].set_name(name) # запоминаем эту информацию в список из объектов класса Animal
+        all_animals[-1].set_page(page)
+        all_animals[-1].set_image(img)
+        all_animals[-1].set_description(description.replace('\n', ' '))
+
+    i = 1
+    for an in all_animals: # проходимся по всем животным и в БД записываем о них всю информацию
+        sql_query = f'''
+    INSERT INTO Animals (id, name, page, discription, image, hair, popular, food, size, area)
+    VALUES ({i}, '{an.get_name()}', '{an.get_page()}', '{an.get_description()}', '{an.get_image()}', 
+    {an.get_criteria()['hair']}, {an.get_criteria()['popular']}, {an.get_criteria()['food']}, 
+    {an.get_criteria()['size']}, {an.get_criteria()['area']});
+    '''
+        print(sql_query)
+        cursor.execute(sql_query)
+        i += 1
+
+    connection_to_sql.commit()
+    connection_to_sql.close() # коммичу и закрываю БД. В ней все данные о животных
+
+
+def add_all_info_into_bd(): # дозаполнить все недостающие данные в бд
+    connection_to_sql = sqlite3.connect('animals.db')
+    cursor = connection_to_sql.cursor()
+    sql_read = '''
+    select * from Animals
+    '''
+    cursor.execute(sql_read)
+    animals = cursor.fetchall() # здесь список из кортежей. Элементы списка - строки БД, кортежа - столбцы в строке
+    criterias = ['hair', 'popular', 'food', 'size', 'area'] # для перебора критериев в цикле
+    for an in animals:
+        if not an[3]:  # если описания нет - получить описание у яндекса
+            desc = ask_descr_from_yandex(keys, an[1])
+            cursor.execute(f'''update Animals
+            set discription = {desc}
+            where name = "{an[1]}"''')
+        for cr in criterias:
+            sql_write_crit = f'''update Animals
+            set {cr} = {random.randint(0, 9)}
+            where name = "{an[1]}"
+            '''
+            cursor.execute(sql_write_crit)
+
+
+    connection_to_sql.commit()
+    connection_to_sql.close()
+
+
 # конец функций
 
 # main
-
-all_tags_for_animals = [] # тэги "а" с данными о животных сохранены в список
-with open(r'.\Жду опекуна.html', 'r', encoding='utf-8') as file: # достаю html код страницы из скачанного файла, так как спарсить сайт не дает
-    soup = BeautifulSoup(file.read(), 'lxml')
-
-all_tags_for_animals = soup.findAll('a', class_='waiting-for-guardian-animals__item animal') # нашел все ссылки на животных
-
-connection_to_sql = sqlite3.connect('animals.db') # присоединяюсь к базе
-cursor = connection_to_sql.cursor()
-cursor.execute('''
-CREATE TABLE IF NOT EXISTS Animals (
-id INTEGER PRIMARY KEY,
-name TEXT,
-page TEXT,
-discription TEXT,
-image TEXT,
-hair INTEGER,
-popular INTEGER,
-food INTEGER,
-size INTEGER,
-area INTEGER
-);
-''')
-
-
-all_animals = []    # список из элементов класса Animal со всеми заполненными полями
-keys = receive_ya_api_keys() # получили ключи из файла
-for a in all_tags_for_animals:
-    all_animals.append(Animal())
-    name = a.find(class_='animal__name').get_text() # запоминаем имя животного
-    page = a['href'] # запоминаем ссылку на животное
-    img = a.find('img').get('src') # запоминаем ссылку на изображение животного
-    description = ask_descr_from_yandex(keys, name) # запоминаем описание животного
-    print(name, '////', page, '////', img)
-    print(description.replace('\n', ' '))
-
-    all_animals[-1].set_name(name) # запоминаем эту информацию в список из объектов класса Animal
-    all_animals[-1].set_page(page)
-    all_animals[-1].set_image(img)
-    all_animals[-1].set_description(description.replace('\n', ' '))
-
-i = 1
-for an in all_animals: # проходимся по всем животным и в БД записываем о них всю информацию
-    sql_query = f'''
-INSERT INTO Animals (id, name, page, discription, image, hair, popular, food, size, area)
-VALUES ({i}, '{an.get_name()}', '{an.get_page()}', '{an.get_description()}', '{an.get_image()}', 
-{an.get_criteria()['hair']}, {an.get_criteria()['popular']}, {an.get_criteria()['food']}, 
-{an.get_criteria()['size']}, {an.get_criteria()['area']});
-'''
-    print(sql_query)
-    cursor.execute(sql_query)
-    i += 1
-
-connection_to_sql.commit()
-connection_to_sql.close() # коммичу и закрываю БД. В ней все данные о животных
+keys = receive_ya_api_keys()
+#first_info_into_bd()
+#add_all_info_into_bd()
 
 
 
