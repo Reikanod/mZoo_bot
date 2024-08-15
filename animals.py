@@ -178,6 +178,8 @@ def add_all_info_into_bd(): # дозаполнить все недостающи
     connection_to_sql.close()
 
 
+
+
 # конец функций
 
 # main

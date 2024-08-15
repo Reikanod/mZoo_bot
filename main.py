@@ -8,7 +8,16 @@ state.cur_state = StateStart()
 
 @bot.message_handler(commands=['start'])
 def greet(message):
-    state.cur_state.greet(message)
+    state.cur_state = 'start'
+
+def greet_dialog(message):
+    pass
+
+@bot.message_handler(content_types=['text'])
+def state(message):
+    match state.cur_state:
+        case 'start':
+            greet_dialog(message)
 
 
 
